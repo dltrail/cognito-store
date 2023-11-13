@@ -1,0 +1,66 @@
+.header {
+    margin-bottom: 60px;
+}
+
+.logo-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+
+
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        top: 0;
+        left: 4px;
+    }
+}
+
+h1 {
+    font-size: 10vw;
+    letter-spacing: 10px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        font-size: 57px;
+    }
+
+    @media screen and (min-width: 1460px) {
+        font-size: 71px;
+    }
+}
+
+// .logo {
+//     position: absolute;
+//     top: 0;
+//     left: 4px;
+// }
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+
+    padding: 0;
+
+    @media screen and (min-width: 768px) {
+        gap: 50px;
+    }
+
+    li {
+        list-style: none;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 6px;
+            }
+        }
+    }
+}

@@ -1,9 +1,19 @@
 .App {
   text-align: center;
+  letter-spacing: 1.5px;
 }
 
 .App-header {
   h1 {
     text-transform: capitalize;
   }
+}
+
+.cartButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  width: 40px;
 }

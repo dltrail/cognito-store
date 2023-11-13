@@ -1,38 +1,39 @@
 import { useState } from "react";
 import "./App.scss";
 import { useFetch } from "./Hooks/useFetch";
+import Header from "./components/Header/Header";
+import ProductList from "./components/ProductList/ProductList";
+import Basket from "./components/Basket/Basket";
+import cart from "./assets/cart.svg";
 
 function App() {
   const [count, setCount] = useState(6);
+  const [isBasketShowing, setBasketShowing] = useState(false);
 
   const { data, isLoading, error } = useFetch(
-    "https://s3.eu-west-2.amazonaws.com/techassessment.cognitoedu.org/roducts.json",
+    "https://s3.eu-west-2.amazonaws.com/techassessment.cognitoedu.org/products.json",
     count
   );
 
-  const loadMore = () => {
+  const handleLoadMore = () => {
     setCount((prevCount) => prevCount + 6);
   };
 
+  const handleToggleBasket = () => {
+    setBasketShowing(!isBasketShowing);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>cognito store</h1>
-      </header>
+    <main className="App">
+      <button className="cartButton" onClick={handleToggleBasket}>
+        <img src={cart} alt="cart icon" />
+      </button>
+      <Header />
       {isLoading && <div>loading</div>}
       {error && <div>{error.msg}</div>}
-      {data.length > 0 &&
-        data.map((product, i) => (
-          <div className="product-card" key={i}>
-            <p>{product.name}</p>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-          </div>
-        ))}
-      {data.length < 50 && !error && (
-        <button onClick={loadMore}>load More</button>
-      )}{" "}
-    </div>
+      <ProductList products={data} loadMore={handleLoadMore} />
+      <Basket open={isBasketShowing} close={handleToggleBasket} />
+    </main>
   );
 }
 

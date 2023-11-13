@@ -1,0 +1,15 @@
+.basket-container {
+    width: 300px;
+    background-color: black;
+    position: absolute;
+    right: -300px;
+    top: 0;
+    height: 100%;
+    color: white;
+    overflow-y: scroll;
+    transition: right 1s ease-in-out;
+}
+
+.basket-container.showing {
+    right: 0;
+}
