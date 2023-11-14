@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const basketFromLocalStorage = JSON.parse(
+  localStorage.getItem("basketItems") || "[]"
+);
+
 const initialState = {
-  basketItems: [],
+  basketItems: basketFromLocalStorage,
 };
 
 export const basketSlice = createSlice({

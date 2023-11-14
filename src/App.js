@@ -4,7 +4,6 @@ import { useFetch } from "./Hooks/useFetch";
 import Header from "./components/Header/Header";
 import ProductList from "./components/ProductList/ProductList";
 import Basket from "./components/Basket/Basket";
-import cart from "./assets/cart.svg";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -16,7 +15,9 @@ function App() {
     count
   );
 
-  console.log(basketItems);
+  useEffect(() => {
+    localStorage.setItem("basketItems", JSON.stringify(basketItems));
+  }, [basketItems]);
 
   const handleLoadMore = () => {
     setCount((prevCount) => prevCount + 6);
