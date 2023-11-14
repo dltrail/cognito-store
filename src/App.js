@@ -23,7 +23,7 @@ function App() {
     setCount((prevCount) => prevCount + 6);
   };
 
-  const handleToggleBasket = () => {
+  const toggleBasket = () => {
     setBasketShowing(!isBasketShowing);
   };
 
@@ -41,13 +41,13 @@ function App() {
 
   return (
     <main className={`App ${isBasketShowing ? "hidden" : "showing"}`}>
-      <Header cartButton={handleToggleBasket} cartTotal={basketItems.length} />
+      <Header handleOpencart={toggleBasket} cartTotal={basketItems.length} />
       {isLoading && <div>loading</div>}
       {error && <div>{error.msg}</div>}
       <ProductList products={data} loadMore={handleLoadMore} />
       <Basket
         open={isBasketShowing}
-        close={handleToggleBasket}
+        close={toggleBasket}
         products={basketItems}
       />
     </main>

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/basketSlice";
 import "./ProductDetail.scss";
 import addSvg from "../../assets/add.svg";
+import Button from "../UI/Button/Button";
 
 function ProductDetail({ product }) {
   const { id, name, description, price } = product;
@@ -27,10 +28,10 @@ function ProductDetail({ product }) {
       </p>
       <p className="product-detail__desc">{description}</p>
       <p className="product-detail__price">{price}</p>
-      <button className="addBtn" onClick={() => handleAddToBasket()}>
+      <Button buttonClass="addBtn" onButtonClick={handleAddToBasket}>
         <img src={addSvg} alt="add to basket icon" />
-        Add To Basket
-      </button>
+        Add To Basket{" "}
+      </Button>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import "./ProductList.scss";
+import Button from "../UI/Button/Button";
 
 function ProductList({ products, loadMore }) {
   return (
@@ -12,9 +13,9 @@ function ProductList({ products, loadMore }) {
           ))}
       </div>
       {products.length < 50 && (
-        <button className="btn loadMore" onClick={() => loadMore()}>
+        <Button buttonClass="loadMore" onButtonClick={loadMore}>
           load More
-        </button>
+        </Button>
       )}
     </div>
   );
