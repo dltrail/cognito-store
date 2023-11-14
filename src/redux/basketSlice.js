@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// get basketItems from local storage
 const basketFromLocalStorage = JSON.parse(
   localStorage.getItem("basketItems") || "[]"
 );
@@ -15,7 +16,7 @@ export const basketSlice = createSlice({
     addProduct: (state, action) => {
       const product = {
         // create separate basket id (bId) to ensure each item in the basket is unique
-        uid: Math.floor(Math.random() * 100),
+        bID: Math.floor(Math.random() * 100),
         id: action.payload.id,
         name: action.payload.name,
         price: action.payload.price,
@@ -26,9 +27,9 @@ export const basketSlice = createSlice({
 
     removeProduct: (state, action) => {
       state.basketItems = state.basketItems.filter(
-        // filter on uid so each basket instance is treated separately.
+        // filter on bID so each basket instance is treated separately.
         //With id, the remove function will remove all instances of that product
-        (product) => product.uid !== action.payload.uid
+        (product) => product.bID !== action.payload.bID
       );
     },
   },

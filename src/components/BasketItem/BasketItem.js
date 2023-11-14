@@ -6,14 +6,14 @@ import "./BasketItem.scss";
 import dashSvg from "../../assets/dash.svg";
 
 function BasketItem({ product }) {
-  const { uid, name, price } = product;
+  const { bID, name, price } = product;
   const dispatch = useDispatch();
 
   const handleRemoveFromBasket = () => {
-    dispatch(removeProduct({ uid }));
+    dispatch(removeProduct({ bID }));
   };
 
-  console.log(uid);
+  console.log(bID);
   return (
     <div className="basketItem">
       <div className="basketItem__left">
