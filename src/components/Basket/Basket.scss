@@ -45,10 +45,12 @@
 .basket-container__footer {
     display: flex;
     flex-direction: column;
+    align-self: flex-end;
     gap: 16px;
-    position: sticky;
+    position: fixed;
     bottom: 0;
-    width: 100%;
+    width: -webkit-fill-available;
+    width: 400px;
     background-color: white;
     padding-bottom: 32px;
 }
