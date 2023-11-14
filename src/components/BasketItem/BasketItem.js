@@ -21,7 +21,7 @@ function BasketItem({ product }) {
           className="basketItem__img"
           src={grocery}
           alt="grocery bag - coming soon"
-          width={100}
+          width={75}
         />
         <p className="basketItem__name">{name}</p>
       </div>
