@@ -27,7 +27,7 @@ function ProductDetail({ product }) {
         {product.name}
       </p>
       <p className="product-detail__desc">{description}</p>
-      <p className="product-detail__price">{price}</p>
+      <p className="product-detail__price">£{price}</p>
       <Button buttonClass="addBtn" onButtonClick={handleAddToBasket}>
         <img src={addSvg} alt="add to basket icon" />
         Add To Basket{" "}
