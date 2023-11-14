@@ -11,7 +11,7 @@ function Basket({ open, close, products }) {
   const Pounds = Intl.NumberFormat("en-GB", {
     style: "currency",
     currency: "GBP",
-    minimumFractionDigits: 0,
+    minimumFractionDigits: 2,
   });
 
   useEffect(() => {
