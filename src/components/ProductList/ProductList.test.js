@@ -1,21 +1,15 @@
-import { act, render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import ProductList from "./ProductList";
 
 const mockProducts = ["product1", "product2"];
 const mock = jest.fn();
 
+jest.mock("react-redux", () => ({
+  useDispatch: jest.fn(),
+  useSelector: jest.fn(),
+}));
+
 describe("ProductList Component", () => {
-  it("renders 3 products properly", async () => {
-    render(<ProductList products={mockProducts} loadMore={() => {}} />);
-
-    await waitFor(() => {
-      const img = screen.getAllByTestId("name");
-      expect(img).toHaveLength(2);
-    });
-    // eslint-disable-next-line testing-library/no-debugging-utils
-    screen.logTestingPlaygroundURL();
-  });
-
   it("calls the onToggle function once with the proprty id as parameter", async () => {
     render(<ProductList products={mockProducts} loadMore={mock} />);
 

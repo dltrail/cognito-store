@@ -1,0 +1,53 @@
+@import '../../globalStyles/colors';
+
+.product-detail {
+    flex: 0 0 31.333333%;
+    margin-bottom: 32px;
+
+    p {
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    &__name {
+        color: $mainBlue;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &__desc {
+        color: $bodyTextGrey;
+        font-size: 14px;
+        width: 250px;
+        margin: auto;
+    }
+
+    &__price {
+        color: $lightBlue;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .addBtn {
+        background-color: $lightestBlue;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        color: $lightBlue;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
+
+
+        &:hover {
+            box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.07);
+
+        }
+    }
+}

@@ -1,6 +1,19 @@
+@import './globalStyles/colors';
+
 .App {
   text-align: center;
   letter-spacing: 1.5px;
+  color: $bodyTextGrey;
+
+  &.hidden {
+    overflow-y: hidden;
+
+  }
+
+  &.showing {
+    overflow-y: scroll;
+
+  }
 }
 
 .App-header {
@@ -9,11 +22,16 @@
   }
 }
 
-.cartButton {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+button {
+  justify-content: center;
   background: transparent;
+  cursor: pointer;
   border: none;
-  width: 40px;
+}
+
+.solid-hr {
+  background-color: rgba(4, 47, 89, .10);
+  height: 4px;
+  margin-top: 50px;
+  display: block;
 }

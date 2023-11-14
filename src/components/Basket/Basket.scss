@@ -1,15 +1,95 @@
+@import '../../globalStyles/colors';
+
 .basket-container {
-    width: 300px;
-    background-color: black;
+    width: 100%;
+    background-color: white;
     position: absolute;
-    right: -300px;
+    right: -100%;
     top: 0;
     height: 100%;
-    color: white;
     overflow-y: scroll;
     transition: right 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: -3px 8px 2px rgba(0, 0, 0, 0.07);
+
+    @media screen and (min-width: 768px) {
+        width: 400px;
+    }
 }
 
 .basket-container.showing {
     right: 0;
+}
+
+.closeBtn {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border: none;
+    align-self: flex-end;
+}
+
+
+.basketItems {
+    margin: 0 16px;
+}
+
+.basket-container__title {
+    color: $mainBlue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.basket-container__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    bottom: 32px;
+    width: 100%;
+}
+
+.basket-container__footer .total {
+    margin: 0 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 34px;
+    font-size: 24px;
+    font-weight: bold;
+
+    span:nth-child(2) {
+        color: $lightBlue;
+    }
+}
+
+.basket-container__footer .saleBtns {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+
+    button {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        width: 100%;
+        gap: 16px;
+        color: $lightBlue;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
+
+        &:nth-child(1) {
+            background-color: $lightestBlue;
+        }
+
+        &:nth-child(2) {
+            border: 1px solid $lightBlue;
+        }
+    }
 }

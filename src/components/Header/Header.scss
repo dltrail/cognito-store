@@ -1,43 +1,78 @@
+@import '../../globalStyles/colors';
+
+
 .header {
     margin-bottom: 60px;
+    position: relative;
 }
+
+
 
 .logo-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .logo {
+        @media screen and (min-width: 768px) {
+            position: absolute;
+            top: 0;
+            left: 4px;
+        }
+    }
+
+    h1 {
+        font-size: 10vw;
+        letter-spacing: 10px;
+        text-align: center;
+        margin-bottom: 0;
+        color: $headerBlue;
+
+        @media screen and (min-width: 768px) {
+            font-size: 57px;
+        }
+
+        @media screen and (min-width: 1460px) {
+            font-size: 71px;
+        }
+    }
+
+    p {
+        color: $bodyTextGrey;
+        // font-weight: lighter;
+    }
+
 }
 
-.logo {
 
+
+.cartButton {
+    position: absolute;
+    bottom: unset;
+    top: 25px;
+    right: 10px;
+    width: auto;
 
     @media screen and (min-width: 768px) {
+        bottom: 20px;
+        right: 30px;
+        top: unset
+    }
+
+
+    span {
         position: absolute;
-        top: 0;
-        left: 4px;
+        background-color: red;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 5px;
+        right: -8px;
+        top: -12px;
+        font-size: 14px;
+        width: 18px;
     }
 }
-
-h1 {
-    font-size: 10vw;
-    letter-spacing: 10px;
-    text-align: center;
-
-    @media screen and (min-width: 768px) {
-        font-size: 57px;
-    }
-
-    @media screen and (min-width: 1460px) {
-        font-size: 71px;
-    }
-}
-
-// .logo {
-//     position: absolute;
-//     top: 0;
-//     left: 4px;
-// }
 
 ul {
     display: flex;
@@ -56,10 +91,12 @@ ul {
 
         a {
             text-decoration: none;
+            color: $headerBlue;
 
             &:hover {
                 text-decoration: underline;
                 text-underline-offset: 6px;
+                font-weight: bold;
             }
         }
     }

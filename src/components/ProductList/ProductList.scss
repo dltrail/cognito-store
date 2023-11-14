@@ -1,0 +1,45 @@
+@import '../../globalStyles/colors';
+
+.productList-container {
+    margin-bottom: 60px;
+}
+
+
+.productList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    max-width: 900px;
+    margin: auto;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+@media only screen and (min-width: 768px) {
+    .productList {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .productList {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+.loadMore {
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-top: 40px;
+    color: $mainBlue;
+    border: 2px solid $mainBlue;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+
+    &:hover {
+        background-color: $mainBlue;
+        color: white
+    }
+}
