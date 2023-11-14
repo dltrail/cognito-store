@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { removeProduct } from "../../redux/basketSlice";
 import "./BasketItem.scss";
 import dashSvg from "../../assets/dash.svg";
+import Button from "../UI/Button/Button";
 
 function BasketItem({ product }) {
   const { bID, name, price } = product;
@@ -26,11 +27,11 @@ function BasketItem({ product }) {
         <p className="basketItem__name">{name}</p>
       </div>
       <p className="basketItem__price">£{price}</p>
-      {/* TODO: make this a UI Component*/}
-      <button className="removeBtn" onClick={handleRemoveFromBasket}>
+
+      <Button buttonClass="removeBtn" onButtonClick={handleRemoveFromBasket}>
         <img src={dashSvg} alt="remove item icon" />
         Remove Item
-      </button>
+      </Button>
     </div>
   );
 }
